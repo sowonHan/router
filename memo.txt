@@ -1,0 +1,15 @@
+url 파라미터 : www.naver.com/rer/ere/rere
+쿼리스트링 : www.naver.com/trdt?key=1&mode=true
+
+*** react-router-dom의 Navigate option - replace 설명 ***
+
+Normally a call to navigate will push a new entry into the history stack so the user can click the back button to get back to the page. If you pass replace: true to navigate then the current entry in the history stack will be replaced with the new one.
+일반적으로 탐색 호출은 사용자가 뒤로 버튼을 클릭하여 페이지로 돌아갈 수 있도록 새 항목을 기록 스택으로 푸시합니다. 다음에 전달 replace: true하면 navigate히스토리 스택의 현재 항목이 새 항목으로 대체됩니다.
+
+An example is when the user clicks a “purchase” button but needs to log in first, after they log in, you can replace the login screen with the checkout screen you wanted them to be at. Then when they click the back button they won’t see the login page again.
+
+구매 버튼을 눌렀는데 로그인을 먼저 해야함 -> 로그인페이지가 호출되어 사용자가 로그인을 함 -> 그러면 로그인 화면을 원래 구매 버튼 눌렀을 때 정상적으로 넘어갔어야할 체크아웃(해외쇼핑몰 결제 단계 페이지들 말하는 듯) 페이지로 대체시킨다는 것 같음. 그 상태에서 사용자가 뒤로 가기를 눌렀을 때 이미 로그인 페이지는 히스토리 스택에서 체크아웃 페이지로 대체된 상태여서 로그인 페이지가 뜨지 않는다는 것 같음.
+
+예시] navigate("/some/where", { replace: true })
+
+https://reach.tech/router/api/navigate
